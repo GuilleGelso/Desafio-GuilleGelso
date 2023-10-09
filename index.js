@@ -49,8 +49,10 @@ class ProductManager {
     
   }
   
+  
 
   getProductByID = (id) => {
+    this.products = JSON.parse(fs.readFileSync(this.path))
     const product = this.products.find(p => p.id === id)
     return product ? product : 'ID No Encontrada'
   }
