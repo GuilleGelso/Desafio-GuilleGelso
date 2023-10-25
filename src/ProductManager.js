@@ -23,7 +23,7 @@ class ProductManager {
                 return false
             }
         }
-        // const products = await this.getProducts()  
+        
         const existingProduct = await this.products.find(p => p.code === product.code)      
         if (existingProduct !== undefined) {  
             console.log(`Ya existe un producto con el código ${product.code}`)
@@ -33,7 +33,7 @@ class ProductManager {
     }
 
     addProduct = async(title, description, price, thumbnail, code, stock) => {
-        // validar los tipos de datos de entrada
+        
         if (typeof title !== 'string' || typeof description !== 'string' || typeof thumbnail !== 'string' || typeof code !== 'string') {
             console.log('Error: title, description, thumbnail y code deben ser tipo string')
             return
